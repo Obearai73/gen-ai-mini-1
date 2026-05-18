@@ -1,0 +1,125 @@
+:root {
+  --bg: #121826;
+  --panel: #1f2840;
+  --text: #e8efff;
+  --accent: #34d399;
+  --muted: #9fb2cc;
+  --input: #172133;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Inter, system-ui, sans-serif;
+  background: radial-gradient(circle at top, #262f4d 0%, #121826 55%);
+  color: var(--text);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.app-shell {
+  width: min(100%, 720px);
+  background: var(--panel);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.app-header {
+  padding: 28px 28px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-header h1 {
+  margin: 0 0 8px;
+  font-size: 1.9rem;
+}
+
+.app-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.chat-container {
+  padding: 20px;
+  max-height: 62vh;
+  overflow-y: auto;
+  display: grid;
+  gap: 14px;
+}
+
+.message {
+  display: inline-flex;
+  max-width: 82%;
+  padding: 16px 18px;
+  border-radius: 20px;
+  line-height: 1.5;
+}
+
+.bot-message {
+  background: rgba(56, 80, 133, 0.95);
+  align-self: flex-start;
+}
+
+.user-message {
+  background: rgba(52, 211, 153, 0.16);
+  color: #d5f8e7;
+  align-self: flex-end;
+}
+
+.message-text {
+  white-space: pre-wrap;
+}
+
+.chat-form {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(17, 25, 44, 0.96);
+}
+
+.chat-form input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: var(--input);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.chat-form button {
+  border: none;
+  border-radius: 14px;
+  padding: 0 20px;
+  background: var(--accent);
+  color: #0f172a;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.chat-form button:hover {
+  filter: brightness(1.05);
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: 100%;
+  }
+
+  .app-header {
+    padding: 24px;
+  }
+}
